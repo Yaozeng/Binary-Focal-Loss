@@ -1,2 +1,2 @@
-# Binary-Focal-Loss
+# Focal-Loss
 focal loss pytorch
