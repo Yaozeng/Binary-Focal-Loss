@@ -15,4 +15,5 @@ class FocalLoss(nn.Module):
         if self.alpha is not None:
             alpha_weight_factor = target * self.alpha +(1 - target) * (1 - self.alpha)
         focal_cross_entropy_loss = modulating_factor * alpha_weight_factor *per_entry_cross_ent
-        return torch.sum(focal_cross_entropy_loss)
+        #return torch.sum(focal_cross_entropy_loss)
+        return torch.mean(focal_cross_entropy_loss)
