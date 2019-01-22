@@ -5,7 +5,7 @@ class FocalLoss(nn.Module):
         self.alpha=alpha
         
     def forward(self, input, target):
-        per_entry_cross_ent = F.binary_cross_entropy_with_logits(input=input, target=target)
+        per_entry_cross_ent = F.binary_cross_entropy_with_logits(input=input, target=target,reduce=False)
         prediction_probabilities = torch.sigmoid(input)
         p_t = (target * prediction_probabilities) +((1 - target) * (1 - prediction_probabilities))
         modulating_factor = 1.0
